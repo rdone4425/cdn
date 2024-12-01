@@ -53,10 +53,6 @@ if [ $? -eq 0 ]; then
     chmod -R 755 .
     chmod 644 *.json *.yml 2>/dev/null
     
-    print_message "\n使用说明:" "$GREEN"
-    print_message "1. 进入目录: ${YELLOW}cd dns${NC}"
-    print_message "2. 安装DNS服务器: ${YELLOW}bash install.sh${NC}"
-    
     # 显示目录结构
     print_message "\n目录结构:" "$GREEN"
     tree -L 2 2>/dev/null || ls -la
@@ -65,4 +61,4 @@ else
     cd ..
     rm -rf "$TEMP_DIR"
     exit 1
-fi
+fi 

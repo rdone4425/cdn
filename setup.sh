@@ -24,32 +24,45 @@ if ! command -v git &> /dev/null; then
     fi
 fi
 
-# 创建 dns 目录
-DNS_DIR="$HOME/dns"
-if [ ! -d "$DNS_DIR" ]; then
-    print_message "创建目录: $DNS_DIR" "$YELLOW"
-    mkdir -p "$DNS_DIR"
-fi
+# 创建临时目录
+print_message "创建临时目录..." "$YELLOW"
+TEMP_DIR=$(mktemp -d)
+cd "$TEMP_DIR"
 
-# 进入 dns 目录
-cd "$DNS_DIR"
-
-# 克隆代码
+# 下载代码
 print_message "正在下载代码..." "$YELLOW"
-if [ -d ".git" ]; then
-    print_message "更新已存在的代码..." "$YELLOW"
-    git pull
-else
-    git clone https://github.com/rdone4425/cdn.git .
-fi
+git clone https://github.com/rdone4425/cdn.git .
 
 if [ $? -eq 0 ]; then
+    # 创建 dns 目录并复制文件
+    print_message "创建 dns 目录..." "$YELLOW"
+    mkdir -p ../dns
+    cp -r worker/* ../dns/
+    cd ../dns
+    
+    # 清理临时目录
+    rm -rf "$TEMP_DIR"
+    
     print_message "✅ 代码下载成功！" "$GREEN"
-    print_message "代码位置: $DNS_DIR" "$GREEN"
+    print_message "代码位置: $(pwd)" "$GREEN"
+    
+    # 创建必要的目录
+    mkdir -p cache logs cert
+    
+    # 设置权限
+    chmod -R 755 .
+    chmod 644 *.json *.yml 2>/dev/null
+    
     print_message "\n使用说明:" "$GREEN"
-    print_message "1. 进入目录: ${YELLOW}cd $DNS_DIR${NC}"
+    print_message "1. 进入目录: ${YELLOW}cd dns${NC}"
     print_message "2. 安装DNS服务器: ${YELLOW}bash install.sh${NC}"
+    
+    # 显示目录结构
+    print_message "\n目录结构:" "$GREEN"
+    tree -L 2 2>/dev/null || ls -la
 else
     print_message "❌ 下载失败，请检查网络连接" "$RED"
+    cd ..
+    rm -rf "$TEMP_DIR"
     exit 1
 fi

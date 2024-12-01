@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 5
+    },
+    "auditLog": ".18949048d7e2d46f7a8dacf69f547b78c169f2a0-audit.json",
+    "files": [
+        {
+            "date": 1733059516710,
+            "name": "dns-server.log.2024-12-01",
+            "hash": "eb9a9b36f122d9778d6f876ba325d5e9e69b4d5c2e942f819aab8c17fa038c69"
+        }
+    ],
+    "hashType": "sha256"
+}

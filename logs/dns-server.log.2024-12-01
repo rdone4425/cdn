@@ -1,0 +1,170 @@
+2024-12-01 21:40:05 info: 正在加载广告域名列表...
+2024-12-01 21:40:05 info: =================================
+2024-12-01 21:40:05 info: 🚀 DNS服务器启动成功!
+2024-12-01 21:40:05 info: 📡 监听地址: 0.0.0.0:53
+2024-12-01 21:40:05 info: 🔄 缓存配置: 最大1000条记录, TTL 3600秒
+2024-12-01 21:40:05 info: 🌐 上游DNS服务器:
+2024-12-01 21:40:05 info:    国内: [object Object], [object Object], [object Object], [object Object]
+2024-12-01 21:40:05 info:    国外: [object Object], [object Object], [object Object], [object Object]
+2024-12-01 21:40:05 info: =================================
+2024-12-01 21:40:05 info: HTTP服务器启动成功，监听端口 3000
+2024-12-01 21:40:05 info: 监控面板地址: http://localhost:3000
+2024-12-01 21:40:16 info: 成功从 https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-domains.txt 加载 97580 个广告域名
+2024-12-01 21:40:16 error: 加载广告域名列表失败 https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt: read ECONNRESET
+2024-12-01 21:40:16 error: 加载广告域名列表失败 https://raw.fastgit.org/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt: getaddrinfo ENOTFOUND raw.fastgit.org
+2024-12-01 21:40:17 error: 加载广告域名列表失败 https://cdn.staticaly.com/gh/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt: write EPROTO D8310000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+
+2024-12-01 21:40:17 info: ✅ 广告拦截规则加载完成，共加载 1 个列表，97580 个域名
+2024-12-01 21:40:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:40:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:40:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:40:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:40:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:40:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:40:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:40:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:36 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:36 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:36 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:36 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:36 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:41:36 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:42:35 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:43:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:43:05 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:43:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:43:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:43:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:43:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:43:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:43:06 error: 健康检查失败: [object Object] - The "servers[0]" argument must be of type string. Received an instance of Object
+2024-12-01 21:46:01 info: 正在加载广告域名列表...
+2024-12-01 21:46:01 info: =================================
+2024-12-01 21:46:01 info: 🚀 DNS服务器启动成功!
+2024-12-01 21:46:01 info: 📡 监听地址: 0.0.0.0:53
+2024-12-01 21:46:01 info: 🔄 缓存配置: 最大1000条记录, TTL 3600秒
+2024-12-01 21:46:01 info: 🌐 上游DNS服务器:
+2024-12-01 21:46:01 info:    国内: 腾讯DNS(119.29.29.29), 阿里DNS(223.5.5.5), 百度DNS(180.76.76.76), 114DNS(114.114.114.114)
+2024-12-01 21:46:01 info:    国外: Google DNS(8.8.8.8), Cloudflare(1.1.1.1), Quad9(9.9.9.9), OpenDNS(208.67.222.222)
+2024-12-01 21:46:01 info: =================================
+2024-12-01 21:46:01 info: HTTP服务器启动成功，监听端口 3000
+2024-12-01 21:46:01 info: 监控面板地址: http://localhost:3000
+2024-12-01 21:46:15 info: 成功从 https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-domains.txt 加载 97580 个广告域名
+2024-12-01 21:46:16 error: 加载广告域名列表失败 https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt: read ECONNRESET
+2024-12-01 21:46:16 error: 加载广告域名列表失败 https://raw.fastgit.org/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt: getaddrinfo ENOTFOUND raw.fastgit.org
+2024-12-01 21:46:18 error: 加载广告域名列表失败 https://cdn.staticaly.com/gh/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt: write EPROTO E8270000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+
+2024-12-01 21:46:18 info: ✅ 广告拦截规则加载完成，共加载 1 个列表，97580 个域名
+2024-12-01 21:46:32 info: 健康检查成功: 119.29.29.29, 响应时间: 209ms
+2024-12-01 21:46:33 info: 健康检查成功: 223.5.5.5, 响应时间: 171ms
+2024-12-01 21:46:33 info: 健康检查成功: 180.76.76.76, 响应时间: 35ms
+2024-12-01 21:46:33 info: 健康检查成功: 114.114.114.114, 响应时间: 322ms
+2024-12-01 21:46:33 info: 健康检查成功: 8.8.8.8, 响应时间: 23ms
+2024-12-01 21:46:33 info: 健康检查成功: 1.1.1.1, 响应时间: 61ms
+2024-12-01 21:46:33 info: 健康检查成功: 9.9.9.9, 响应时间: 32ms
+2024-12-01 21:46:33 info: 健康检查成功: 208.67.222.222, 响应时间: 30ms
+2024-12-01 21:47:01 info: 健康检查成功: 119.29.29.29, 响应时间: 20ms
+2024-12-01 21:47:01 info: 健康检查成功: 223.5.5.5, 响应时间: 20ms
+2024-12-01 21:47:01 info: 健康检查成功: 180.76.76.76, 响应时间: 32ms
+2024-12-01 21:47:02 info: 健康检查成功: 114.114.114.114, 响应时间: 39ms
+2024-12-01 21:47:02 info: 健康检查成功: 8.8.8.8, 响应时间: 23ms
+2024-12-01 21:47:02 info: 健康检查成功: 1.1.1.1, 响应时间: 66ms
+2024-12-01 21:47:02 info: 健康检查成功: 9.9.9.9, 响应时间: 28ms
+2024-12-01 21:47:02 info: 健康检查成功: 208.67.222.222, 响应时间: 25ms
+2024-12-01 21:47:31 info: 健康检查成功: 119.29.29.29, 响应时间: 20ms
+2024-12-01 21:47:31 info: 健康检查成功: 223.5.5.5, 响应时间: 20ms
+2024-12-01 21:47:31 info: 健康检查成功: 180.76.76.76, 响应时间: 26ms
+2024-12-01 21:47:32 info: 健康检查成功: 114.114.114.114, 响应时间: 47ms
+2024-12-01 21:47:32 info: 健康检查成功: 8.8.8.8, 响应时间: 22ms
+2024-12-01 21:47:32 info: 健康检查成功: 1.1.1.1, 响应时间: 63ms
+2024-12-01 21:47:32 info: 健康检查成功: 9.9.9.9, 响应时间: 22ms
+2024-12-01 21:47:32 info: 健康检查成功: 208.67.222.222, 响应时间: 24ms
+2024-12-01 21:48:01 info: 健康检查成功: 119.29.29.29, 响应时间: 26ms
+2024-12-01 21:48:01 info: 健康检查成功: 223.5.5.5, 响应时间: 20ms
+2024-12-01 21:48:01 info: 健康检查成功: 180.76.76.76, 响应时间: 27ms
+2024-12-01 21:48:02 info: 健康检查成功: 114.114.114.114, 响应时间: 38ms
+2024-12-01 21:48:02 info: 健康检查成功: 8.8.8.8, 响应时间: 23ms
+2024-12-01 21:48:02 info: 健康检查成功: 1.1.1.1, 响应时间: 69ms
+2024-12-01 21:48:02 info: 健康检查成功: 9.9.9.9, 响应时间: 20ms
+2024-12-01 21:48:02 info: 健康检查成功: 208.67.222.222, 响应时间: 28ms
+2024-12-01 21:48:31 info: 健康检查成功: 119.29.29.29, 响应时间: 63ms
+2024-12-01 21:48:32 info: 健康检查成功: 223.5.5.5, 响应时间: 20ms
+2024-12-01 21:48:32 info: 健康检查成功: 180.76.76.76, 响应时间: 25ms
+2024-12-01 21:48:32 info: 健康检查成功: 114.114.114.114, 响应时间: 38ms
+2024-12-01 21:48:32 info: 健康检查成功: 8.8.8.8, 响应时间: 21ms
+2024-12-01 21:48:32 info: 健康检查成功: 1.1.1.1, 响应时间: 65ms
+2024-12-01 21:48:32 info: 健康检查成功: 9.9.9.9, 响应时间: 27ms
+2024-12-01 21:48:32 info: 健康检查成功: 208.67.222.222, 响应时间: 72ms
+2024-12-01 21:49:01 info: 健康检查成功: 119.29.29.29, 响应时间: 21ms
+2024-12-01 21:49:01 info: 健康检查成功: 223.5.5.5, 响应时间: 20ms
+2024-12-01 21:49:02 info: 健康检查成功: 180.76.76.76, 响应时间: 29ms
+2024-12-01 21:49:02 info: 健康检查成功: 114.114.114.114, 响应时间: 47ms
+2024-12-01 21:49:02 info: 健康检查成功: 8.8.8.8, 响应时间: 24ms
+2024-12-01 21:49:02 info: 健康检查成功: 1.1.1.1, 响应时间: 63ms
+2024-12-01 21:49:02 info: 健康检查成功: 9.9.9.9, 响应时间: 23ms
+2024-12-01 21:49:02 info: 健康检查成功: 208.67.222.222, 响应时间: 30ms
+2024-12-01 21:49:31 info: 健康检查成功: 119.29.29.29, 响应时间: 24ms
+2024-12-01 21:49:32 info: 健康检查成功: 223.5.5.5, 响应时间: 24ms
+2024-12-01 21:49:32 info: 健康检查成功: 180.76.76.76, 响应时间: 32ms
+2024-12-01 21:49:32 info: 健康检查成功: 114.114.114.114, 响应时间: 39ms
+2024-12-01 21:49:32 info: 健康检查成功: 8.8.8.8, 响应时间: 44ms
+2024-12-01 21:49:32 info: 健康检查成功: 1.1.1.1, 响应时间: 90ms
+2024-12-01 21:49:32 info: 健康检查成功: 9.9.9.9, 响应时间: 24ms
+2024-12-01 21:49:32 info: 健康检查成功: 208.67.222.222, 响应时间: 24ms
+2024-12-01 21:50:01 info: 健康检查成功: 119.29.29.29, 响应时间: 21ms
+2024-12-01 21:50:02 info: 健康检查成功: 223.5.5.5, 响应时间: 21ms
+2024-12-01 21:50:02 info: 健康检查成功: 180.76.76.76, 响应时间: 36ms
+2024-12-01 21:50:02 info: 健康检查成功: 114.114.114.114, 响应时间: 42ms
+2024-12-01 21:50:02 info: 健康检查成功: 8.8.8.8, 响应时间: 23ms
+2024-12-01 21:50:02 info: 健康检查成功: 1.1.1.1, 响应时间: 59ms
+2024-12-01 21:50:02 info: 健康检查成功: 9.9.9.9, 响应时间: 25ms
+2024-12-01 21:50:02 info: 健康检查成功: 208.67.222.222, 响应时间: 27ms
+2024-12-01 21:50:31 info: 健康检查成功: 119.29.29.29, 响应时间: 25ms
+2024-12-01 21:50:32 info: 健康检查成功: 223.5.5.5, 响应时间: 26ms
+2024-12-01 21:50:32 info: 健康检查成功: 180.76.76.76, 响应时间: 47ms
+2024-12-01 21:50:32 info: 健康检查成功: 114.114.114.114, 响应时间: 63ms
+2024-12-01 21:50:32 info: 健康检查成功: 8.8.8.8, 响应时间: 46ms
+2024-12-01 21:50:32 info: 健康检查成功: 1.1.1.1, 响应时间: 71ms
+2024-12-01 21:50:32 info: 健康检查成功: 9.9.9.9, 响应时间: 30ms
+2024-12-01 21:50:32 info: 健康检查成功: 208.67.222.222, 响应时间: 57ms
+2024-12-01 21:51:01 info: 健康检查成功: 119.29.29.29, 响应时间: 21ms
+2024-12-01 21:51:02 info: 健康检查成功: 223.5.5.5, 响应时间: 19ms
+2024-12-01 21:51:02 info: 健康检查成功: 180.76.76.76, 响应时间: 26ms
+2024-12-01 21:51:02 info: 健康检查成功: 114.114.114.114, 响应时间: 40ms
+2024-12-01 21:51:02 info: 健康检查成功: 8.8.8.8, 响应时间: 48ms
+2024-12-01 21:51:02 info: 健康检查成功: 1.1.1.1, 响应时间: 180ms
+2024-12-01 21:51:02 info: 健康检查成功: 9.9.9.9, 响应时间: 22ms
+2024-12-01 21:51:02 info: 健康检查成功: 208.67.222.222, 响应时间: 26ms
+2024-12-01 21:51:32 info: 健康检查成功: 119.29.29.29, 响应时间: 28ms
+2024-12-01 21:51:32 info: 健康检查成功: 223.5.5.5, 响应时间: 19ms
+2024-12-01 21:51:32 info: 健康检查成功: 180.76.76.76, 响应时间: 62ms
+2024-12-01 21:51:32 info: 健康检查成功: 114.114.114.114, 响应时间: 43ms
+2024-12-01 21:51:32 info: 健康检查成功: 8.8.8.8, 响应时间: 25ms
+2024-12-01 21:51:32 info: 健康检查成功: 1.1.1.1, 响应时间: 72ms
+2024-12-01 21:51:32 info: 健康检查成功: 9.9.9.9, 响应时间: 21ms
+2024-12-01 21:51:32 info: 健康检查成功: 208.67.222.222, 响应时间: 24ms

@@ -1,0 +1,136 @@
+server:
+  bind: 0.0.0.0
+  port: 53
+  timeout: 3000
+  maxRetries: 3
+  workers: 4
+
+cache:
+  size: 1000
+  ttl: 3600
+  checkPeriod: 600
+  persistPath: ".\\cache"
+
+loadbalancer:
+  strategy: weighted
+  healthCheck:
+    enabled: true
+    interval: 30
+    timeout: 2000
+    testDomain: www.google.com
+  fallback: true
+
+upstream:
+  china:
+    - name: "腾讯DNS"
+      ip: 119.29.29.29
+      weight: 10
+    - name: "阿里DNS"
+      ip: 223.5.5.5
+      weight: 10
+    - name: "百度DNS"
+      ip: 180.76.76.76
+      weight: 8
+    - name: "114DNS"
+      ip: 114.114.114.114
+      weight: 8
+  foreign:
+    - name: "Google DNS"
+      ip: 8.8.8.8
+      weight: 10
+    - name: "Cloudflare"
+      ip: 1.1.1.1
+      weight: 10
+    - name: "Quad9"
+      ip: 9.9.9.9
+      weight: 8
+    - name: "OpenDNS"
+      ip: 208.67.222.222
+      weight: 8
+
+rules:
+  - type: "domain"
+    domain: "cn"
+    action: "china"
+  - type: "domain"
+    domain: "baidu.com"
+    action: "china"
+  - type: "domain"
+    domain: "alibaba.com"
+    action: "china"
+  - type: "domain"
+    domain: "google.com"
+    action: "foreign"
+  - type: "domain"
+    domain: "facebook.com"
+    action: "foreign"
+  
+  - type: "ip"
+    cidr: "192.168.0.0/16"
+    action: "china"
+  - type: "ip"
+    cidr: "10.0.0.0/8"
+    action: "china"
+  
+  - type: "smart"
+    enabled: true
+    action: "auto"
+
+adblock:
+  enabled: true
+  lists:
+    - "https://cdn.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-domains.txt"
+    - "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
+    - "https://raw.fastgit.org/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt"
+    - "https://cdn.staticaly.com/gh/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt"
+  updateInterval: 86400
+  customRules:
+    - "analytics.google.com"
+    - "ads.facebook.com"
+  whitelist:
+    - "static.doubleclick.net"
+
+security:
+  rateLimit:
+    enabled: true
+    maxRequests: 1000
+    blockDuration: 300
+  ddosProtection:
+    enabled: true
+    threshold: 5000
+  encryption:
+    enabled: false
+    cert: ".\\cert\\server.crt"
+    key: ".\\cert\\server.key"
+
+logging:
+  level: "info"
+  file: ".\\logs\\dns-server.log"
+  maxSize: 10485760
+  maxFiles: 5
+  format: "json"
+  console: true
+
+monitoring:
+  enabled: true
+  interval: 60
+  retention: 7
+  metrics:
+    - queryCount
+    - responseTime
+    - cacheHitRate
+    - errorRate
+  alerting:
+    enabled: true
+    contacts:
+      - type: "email"
+        address: "admin@example.com"
+      - type: "webhook"
+        url: "http://alert.example.com/webhook"
+    rules:
+      - name: "高延迟"
+        condition: "responseTime > 1000"
+        duration: "5m"
+      - name: "高错误率"
+        condition: "errorRate > 5"
+        duration: "5m"

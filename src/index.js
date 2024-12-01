@@ -188,6 +188,13 @@ class DNSServer {
 
             const responseTime = Date.now() - startTime;
             monitor.recordResponseTime(responseTime);
+
+            const lastQuery = monitor.stats.queryHistory[0];
+            if (lastQuery && lastQuery.domain === name) {
+                lastQuery.responseTime = responseTime;
+                lastQuery.result = result ? result.address : 'Failed';
+            }
+
             send(response);
         } catch (error) {
             logger.error(`处理请求时发生错误: ${error.message}`);

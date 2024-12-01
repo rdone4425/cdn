@@ -22,29 +22,31 @@ class HTTPServer {
         // API路由
         this.app.get('/api/stats', (req, res) => {
             try {
-                const stats = monitor.getStats();
+                const monitorStats = monitor.getStats();
                 const cacheStats = cache.getStats();
                 const lbStats = loadBalancer.getServerStats();
                 const upstreamServers = config.getUpstreamServers();
                 
                 // 构建负载均衡器状态
                 const loadBalancerStats = {
-                    china: Object.keys(lbStats)
-                        .filter(ip => upstreamServers.china.includes(ip))
-                        .map(ip => ({
-                            ip,
-                            ...lbStats[ip]
-                        })),
-                    foreign: Object.keys(lbStats)
-                        .filter(ip => upstreamServers.foreign.includes(ip))
-                        .map(ip => ({
-                            ip,
-                            ...lbStats[ip]
-                        }))
+                    china: upstreamServers.china.map(server => ({
+                        ip: server.ip,
+                        name: server.name,
+                        ...lbStats[server.ip]
+                    })),
+                    foreign: upstreamServers.foreign.map(server => ({
+                        ip: server.ip,
+                        name: server.name,
+                        ...lbStats[server.ip]
+                    }))
                 };
                 
                 res.json({
-                    ...stats,
+                    uptime: monitorStats.uptime,
+                    totalQueries: monitorStats.totalQueries,
+                    blockedQueries: monitorStats.blockedQueries,
+                    averageResponseTime: monitorStats.averageResponseTime,
+                    queryHistory: monitorStats.queryHistory,
                     cacheStats: {
                         usage: Math.floor((cacheStats.keys / config.getCacheConfig().size) * 100),
                         hitRate: cacheStats.hitRate,
@@ -73,11 +75,34 @@ class HTTPServer {
     }
 
     start() {
-        const port = 3000; // Web界面端口
-        this.app.listen(port, () => {
-            logger.info(`HTTP服务器启动成功，监听端口 ${port}`);
-            logger.info(`监控面板地址: http://localhost:${port}`);
-        });
+        const port = 3000;
+        const maxRetries = 5;
+        let currentPort = port;
+
+        const tryListen = () => {
+            this.app.listen(currentPort)
+                .on('error', (err) => {
+                    if (err.code === 'EADDRINUSE') {
+                        logger.warn(`Port ${currentPort} is in use, trying ${currentPort + 1}...`);
+                        currentPort++;
+                        if (currentPort < port + maxRetries) {
+                            tryListen();
+                        } else {
+                            logger.error('Could not find an available port');
+                            process.exit(1);
+                        }
+                    } else {
+                        logger.error('HTTP server error:', err);
+                        process.exit(1);
+                    }
+                })
+                .on('listening', () => {
+                    logger.info(`HTTP服务器启动成功，监听端口 ${currentPort}`);
+                    logger.info(`监控面板地址: http://localhost:${currentPort}`);
+                });
+        };
+
+        tryListen();
     }
 }
 

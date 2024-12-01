@@ -2,8 +2,12 @@ const winston = require('winston');
 const { createLogger, format, transports } = winston;
 const DailyRotateFile = require('winston-daily-rotate-file');
 const config = require('./config');
+const path = require('path');
 
 const logConfig = config.getLoggingConfig();
+
+const logDir = '/root/dns/logs';
+const logFile = path.join(logDir, 'dns-server.log');
 
 const logger = createLogger({
     level: logConfig.level,
@@ -21,10 +25,12 @@ const logger = createLogger({
             )
         }),
         new DailyRotateFile({
-            filename: logConfig.file,
+            filename: logFile,
             datePattern: 'YYYY-MM-DD',
             maxSize: logConfig.maxSize,
-            maxFiles: logConfig.maxFiles
+            maxFiles: logConfig.maxFiles,
+            dirname: logDir,
+            auditFile: path.join(logDir, '.audit.json')
         })
     ]
 });

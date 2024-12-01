@@ -7,6 +7,7 @@ class DNSMonitor {
             blockedQueries: 0,
             failedQueries: 0,
             averageResponseTime: 0,
+            totalResponseTime: 0,
             queryHistory: []
         };
         
@@ -15,14 +16,21 @@ class DNSMonitor {
 
     recordQuery(queryInfo) {
         this.stats.totalQueries++;
-        this.stats.queryHistory.push({
+        
+        // 添加查询记录到历史
+        const record = {
             timestamp: Date.now(),
-            ...queryInfo
-        });
+            domain: queryInfo.domain,
+            client: queryInfo.client,
+            result: queryInfo.result || '-',
+            responseTime: queryInfo.responseTime || 0
+        };
+        
+        this.stats.queryHistory.unshift(record);
 
-        // 只保留最近1000条查询记录
-        if (this.stats.queryHistory.length > 1000) {
-            this.stats.queryHistory.shift();
+        // 只保留最近100条查询记录
+        if (this.stats.queryHistory.length > 100) {
+            this.stats.queryHistory.pop();
         }
     }
 
@@ -43,18 +51,21 @@ class DNSMonitor {
     }
 
     recordResponseTime(time) {
+        this.stats.totalResponseTime += time;
         this.stats.averageResponseTime = 
-            (this.stats.averageResponseTime * (this.stats.totalQueries - 1) + time) 
-            / this.stats.totalQueries;
+            this.stats.totalResponseTime / this.stats.totalQueries;
     }
 
     getStats() {
         return {
-            ...this.stats,
-            uptime: Math.floor((Date.now() - this.startTime) / 1000),
-            cacheHitRate: this.stats.totalQueries ? 
-                (this.stats.cacheHits / this.stats.totalQueries * 100).toFixed(2) + '%' : 
-                '0%'
+            totalQueries: this.stats.totalQueries,
+            cacheHits: this.stats.cacheHits,
+            cacheMisses: this.stats.cacheMisses,
+            blockedQueries: this.stats.blockedQueries,
+            failedQueries: this.stats.failedQueries,
+            averageResponseTime: Math.round(this.stats.averageResponseTime),
+            queryHistory: this.stats.queryHistory,
+            uptime: Math.floor((Date.now() - this.startTime) / 1000)
         };
     }
 }

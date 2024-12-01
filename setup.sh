@@ -24,6 +24,12 @@ if ! command -v git &> /dev/null; then
     fi
 fi
 
+# 检查是否是 root 用户
+if [ "$EUID" -ne 0 ]; then 
+    print_message "❌ 请使用 root 用户运行此脚本" "$RED"
+    exit 1
+fi
+
 # 创建临时目录
 print_message "创建临时目录..." "$YELLOW"
 TEMP_DIR=$(mktemp -d)
@@ -35,10 +41,10 @@ git clone https://github.com/rdone4425/cdn.git .
 
 if [ $? -eq 0 ]; then
     # 创建 dns 目录并复制文件
-    print_message "创建 dns 目录..." "$YELLOW"
-    mkdir -p ../dns
-    cp -r worker/* ../dns/
-    cd ../dns
+    print_message "创建 /root/dns 目录..." "$YELLOW"
+    mkdir -p /root/dns
+    cp -r worker/* /root/dns/
+    cd /root/dns
     
     # 清理临时目录
     rm -rf "$TEMP_DIR"
@@ -52,13 +58,14 @@ if [ $? -eq 0 ]; then
     # 设置权限
     chmod -R 755 .
     chmod 644 *.json *.yml 2>/dev/null
+    chown -R root:root .
     
     # 显示目录结构
     print_message "\n目录结构:" "$GREEN"
     tree -L 2 2>/dev/null || ls -la
 else
     print_message "❌ 下载失败，请检查网络连接" "$RED"
-    cd ..
+    cd /root
     rm -rf "$TEMP_DIR"
     exit 1
 fi 
